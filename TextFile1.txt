@@ -1,0 +1,1 @@
+    CatalogAPI=  "applicationUrl": "http://localhost:5011",
