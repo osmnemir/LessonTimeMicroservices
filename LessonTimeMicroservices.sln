@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{10D43C97-0974-443D-B79C-E003DD3FE196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Services.Catalog", "Services\Catalog\LessonTime.Services.Catalog\LessonTime.Services.Catalog.csproj", "{BF51E91F-5318-46E9-B9CC-CAA3E6F83D88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.Services.Catalog", "Services\Catalog\LessonTime.Services.Catalog\LessonTime.Services.Catalog.csproj", "{BF51E91F-5318-46E9-B9CC-CAA3E6F83D88}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F09D50AE-326C-4B45-A936-BC532257955A}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{F2F40BC9-0E79-4C9A-8C6B-D4C7EEAFB114}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Shared", "Shared\LessonTime.Shared\LessonTime.Shared.csproj", "{07A9D50E-BE48-4A02-B16F-DCD398ED0CF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.Shared", "Shared\LessonTime.Shared\LessonTime.Shared.csproj", "{07A9D50E-BE48-4A02-B16F-DCD398ED0CF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
