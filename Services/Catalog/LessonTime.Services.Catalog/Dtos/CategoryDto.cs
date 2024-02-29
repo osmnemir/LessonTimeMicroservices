@@ -1,6 +1,6 @@
 ﻿namespace LessonTime.Services.Catalog.Dtos
 {
-    internal class CategoryDto
+    public class CategoryDto
     {
         public string Id { get; set; }
 

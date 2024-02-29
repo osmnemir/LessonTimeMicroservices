@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LessonTime.Services.Catalog.Dtos
 {
-    internal class CourseDto
+    public class CourseDto
     {
         public string Id { get; set; }
 

@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace LessonTime.Services.Catalog.Services
 {
-    internal class CourseService : ICourseService
+    public class CourseService : ICourseService
     {
         private readonly IMongoCollection<Course> _courseCollection; // Kurs koleksiyonunu temsil eden IMongoCollection<Course> alanı.
         private readonly IMongoCollection<Category> _categoryCollection; // Kategori koleksiyonunu temsil eden IMongoCollection<Category> alanı.
