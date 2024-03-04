@@ -1,1 +1,3 @@
     CatalogAPI=  "applicationUrl": "http://localhost:5011",
+     ÝdentityServer=  "applicationUrl": "http://localhost:5001",
+      PhotoStockAPI=  "applicationUrl": "http://localhost:5012",
