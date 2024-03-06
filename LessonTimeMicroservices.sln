@@ -24,7 +24,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.IdentityServer",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{C9D43168-DF6E-495A-89E7-18DCA6FA860A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.PhotoStock", "Services\PhotoStock\LessonTime.PhotoStock\LessonTime.PhotoStock.csproj", "{266E360E-E3E3-4D97-8913-22F6F6C39E4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.PhotoStock", "Services\PhotoStock\LessonTime.PhotoStock\LessonTime.PhotoStock.csproj", "{266E360E-E3E3-4D97-8913-22F6F6C39E4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{DDC58801-E81F-4178-81DF-B055AF0833E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Services.Basket", "Services\Basket\LessonTime.Services.Basket\LessonTime.Services.Basket.csproj", "{57CFE6E0-FF29-44D4-8807-492539E5692C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +52,10 @@ Global
 		{266E360E-E3E3-4D97-8913-22F6F6C39E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{266E360E-E3E3-4D97-8913-22F6F6C39E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{266E360E-E3E3-4D97-8913-22F6F6C39E4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CFE6E0-FF29-44D4-8807-492539E5692C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CFE6E0-FF29-44D4-8807-492539E5692C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CFE6E0-FF29-44D4-8807-492539E5692C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CFE6E0-FF29-44D4-8807-492539E5692C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,8 @@ Global
 		{67AA282F-262D-4E12-B769-C7CD4D2643C1} = {84F60C10-FBCD-4B8F-A8E5-E6C1A3144315}
 		{C9D43168-DF6E-495A-89E7-18DCA6FA860A} = {9E65C2DC-44F8-4758-911E-3FCE25D471F9}
 		{266E360E-E3E3-4D97-8913-22F6F6C39E4C} = {C9D43168-DF6E-495A-89E7-18DCA6FA860A}
+		{DDC58801-E81F-4178-81DF-B055AF0833E4} = {9E65C2DC-44F8-4758-911E-3FCE25D471F9}
+		{57CFE6E0-FF29-44D4-8807-492539E5692C} = {DDC58801-E81F-4178-81DF-B055AF0833E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0AE7155E-F452-4117-8578-E310E9949E62}
