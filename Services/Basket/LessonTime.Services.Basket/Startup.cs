@@ -1,5 +1,6 @@
 using LessonTime.Services.Basket.Services;
 using LessonTime.Services.Basket.Settings;
+using LessonTime.Shared.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +29,10 @@ namespace LessonTime.Services.Basket
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
+
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+            services.AddScoped<IBasketService, BasketService>();
             services.Configure<RedisSettings>(Configuration.GetSection("RedisSettings"));
             services.AddSingleton<RedisService>(sp =>
             {
