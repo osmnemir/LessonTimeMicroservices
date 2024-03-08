@@ -2,3 +2,4 @@
      ÝdentityServer=  "applicationUrl": "http://localhost:5001",
       PhotoStockAPI=  "applicationUrl": "http://localhost:5012",
       BasketAPI=  "applicationUrl": "http://localhost:5013",
+      DiscountAPI=  "applicationUrl": "http://localhost:5014",
