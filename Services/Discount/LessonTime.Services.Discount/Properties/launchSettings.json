@@ -20,7 +20,7 @@
     "LessonTime.Services.Discount": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
-      "launchBrowser": false
+      "launchBrowser": false,
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5014",
       "environmentVariables": {
