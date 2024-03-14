@@ -5,12 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\LessonTime.Shared\LessonTime.Shared.csproj" />
     <ProjectReference Include="..\LessonTime.Services.Order.Domain\LessonTime.Services.Order.Domain.csproj" />
     <ProjectReference Include="..\LessonTime.Services.Order.Infrastructure\LessonTime.Services.Order.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\" />
   </ItemGroup>
 
 </Project>
