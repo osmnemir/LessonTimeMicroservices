@@ -13,12 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\LessonTime.Shared\LessonTime.Shared.csproj" />
     <ProjectReference Include="..\LessonTime.Services.Order.Application\LessonTime.Services.Order.Application.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

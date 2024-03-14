@@ -1,4 +1,6 @@
 using LessonTime.Services.Order.Infrastructure;
+using LessonTime.Shared.Services;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -35,8 +37,10 @@ namespace LessonTime.Services.Order.API
                     configure.MigrationsAssembly("LessonTime.Services.Order.Infrastructure");
                 });
             });
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+            services.AddHttpContextAccessor();
 
-
+            services.AddMediatR(typeof(Application.Handlers.CreateOrderCommandHandler).Assembly);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
