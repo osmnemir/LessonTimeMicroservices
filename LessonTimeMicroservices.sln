@@ -36,15 +36,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.Services.Discoun
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{BE09EC7D-2B50-4664-B41C-0C1EB88E2F1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Services.Order.API", "Services\Order\LessonTime.Services.Order.API\LessonTime.Services.Order.API.csproj", "{6949FA8C-C5FE-49FC-BDEF-1E86BD8AC44D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.Services.Order.API", "Services\Order\LessonTime.Services.Order.API\LessonTime.Services.Order.API.csproj", "{6949FA8C-C5FE-49FC-BDEF-1E86BD8AC44D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Services.Order.Application", "Services\Order\LessonTime.Services.Order.Application\LessonTime.Services.Order.Application.csproj", "{C1ED7F4B-02FB-456C-A02E-45B246DF67A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.Services.Order.Application", "Services\Order\LessonTime.Services.Order.Application\LessonTime.Services.Order.Application.csproj", "{C1ED7F4B-02FB-456C-A02E-45B246DF67A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Services.Order.Domain", "Services\Order\LessonTime.Services.Order.Domain\LessonTime.Services.Order.Domain.csproj", "{614F07FF-8E13-4672-8566-7AD73C657267}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.Services.Order.Domain", "Services\Order\LessonTime.Services.Order.Domain\LessonTime.Services.Order.Domain.csproj", "{614F07FF-8E13-4672-8566-7AD73C657267}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Services.Order.Domain.Core", "Services\Order\LessonTime.Services.Order.Domain.Core\LessonTime.Services.Order.Domain.Core.csproj", "{04FAA228-41BA-4987-9531-0BDE1988C292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.Services.Order.Domain.Core", "Services\Order\LessonTime.Services.Order.Domain.Core\LessonTime.Services.Order.Domain.Core.csproj", "{04FAA228-41BA-4987-9531-0BDE1988C292}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Services.Order.Infrastructure", "Services\Order\LessonTime.Services.Order.Infrastructure\LessonTime.Services.Order.Infrastructure.csproj", "{0D2008F9-2CA6-4C07-B728-1B1FEEB3E7D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonTime.Services.Order.Infrastructure", "Services\Order\LessonTime.Services.Order.Infrastructure\LessonTime.Services.Order.Infrastructure.csproj", "{0D2008F9-2CA6-4C07-B728-1B1FEEB3E7D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakePayment", "FakePayment", "{53D54ED7-3D98-4DEA-B03C-E6675E16FD44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonTime.Services.FakePayment", "Services\FakePayment\LessonTime.Services.FakePayment\LessonTime.Services.FakePayment.csproj", "{57DD1387-8BC2-4E3D-B8D4-4E9E7228EDC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +100,10 @@ Global
 		{0D2008F9-2CA6-4C07-B728-1B1FEEB3E7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D2008F9-2CA6-4C07-B728-1B1FEEB3E7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D2008F9-2CA6-4C07-B728-1B1FEEB3E7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57DD1387-8BC2-4E3D-B8D4-4E9E7228EDC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57DD1387-8BC2-4E3D-B8D4-4E9E7228EDC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57DD1387-8BC2-4E3D-B8D4-4E9E7228EDC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57DD1387-8BC2-4E3D-B8D4-4E9E7228EDC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,8 @@ Global
 		{614F07FF-8E13-4672-8566-7AD73C657267} = {BE09EC7D-2B50-4664-B41C-0C1EB88E2F1B}
 		{04FAA228-41BA-4987-9531-0BDE1988C292} = {BE09EC7D-2B50-4664-B41C-0C1EB88E2F1B}
 		{0D2008F9-2CA6-4C07-B728-1B1FEEB3E7D7} = {BE09EC7D-2B50-4664-B41C-0C1EB88E2F1B}
+		{53D54ED7-3D98-4DEA-B03C-E6675E16FD44} = {9E65C2DC-44F8-4758-911E-3FCE25D471F9}
+		{57DD1387-8BC2-4E3D-B8D4-4E9E7228EDC7} = {53D54ED7-3D98-4DEA-B03C-E6675E16FD44}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0AE7155E-F452-4117-8578-E310E9949E62}
