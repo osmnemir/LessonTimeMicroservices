@@ -6,3 +6,4 @@
       OrderAPI=  "applicationUrl": "http://localhost:5015",
       FakePaymentAPI=  "applicationUrl": "http://localhost:5016",
       GatewayAPI=  "applicationUrl": "http://localhost:5000",
+      Web=  "applicationUrl": "http://localhost:5010",
