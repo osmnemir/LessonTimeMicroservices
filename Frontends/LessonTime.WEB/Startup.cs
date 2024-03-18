@@ -24,6 +24,7 @@ namespace LessonTime.WEB
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
+            services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
             services.AddControllersWithViews();
         }
 
