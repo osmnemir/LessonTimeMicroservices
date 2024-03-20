@@ -7,7 +7,7 @@ namespace LessonTime.WEB.Services.Interfaces
 {
     public interface IIdentityService
     {
-        Task<Response<bool>> SingIn(SignInInput signInInput);
+        Task<Response<bool>> SignIn(SignInInput signInInput);
         Task<TokenResponse> GetAccessTokenByRefreshToken();
         Task RevokeRefreshToken();
 
