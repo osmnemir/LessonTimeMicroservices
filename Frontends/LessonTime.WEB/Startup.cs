@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using LessonTime.WEB.Handler;
 
 namespace LessonTime.WEB
 {
@@ -23,18 +24,21 @@ namespace LessonTime.WEB
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpContextAccessor();
 
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
+            services.AddHttpContextAccessor();
 
-            var serviceApiSettings=Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
+
+            var serviceApiSettings =Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddHttpClient<IdentityService>();
             services.AddHttpClient<IUserService, UserService>(opt =>
             {
                 opt.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
-            });   
+            }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();   
+
+
 
             services.AddControllersWithViews();
 
