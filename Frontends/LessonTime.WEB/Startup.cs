@@ -1,4 +1,3 @@
-using LessonTime.Shared.Services;
 using LessonTime.WEB.Models;
 using LessonTime.WEB.Services.Interfaces;
 using LessonTime.WEB.Services;
@@ -8,9 +7,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace LessonTime.WEB
@@ -31,9 +27,14 @@ namespace LessonTime.WEB
 
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
+
+            var serviceApiSettings=Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddHttpClient<IdentityService>();
-
+            services.AddHttpClient<IUserService, UserService>(opt =>
+            {
+                opt.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
+            });   
 
             services.AddControllersWithViews();
 
