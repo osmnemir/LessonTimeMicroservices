@@ -31,6 +31,7 @@ namespace LessonTime.WEB
 
 
             var serviceApiSettings =Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
+            services.AddScoped<ResourceOwnerPasswordTokenHandler>();
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddHttpClient<IdentityService>();
             services.AddHttpClient<IUserService, UserService>(opt =>
