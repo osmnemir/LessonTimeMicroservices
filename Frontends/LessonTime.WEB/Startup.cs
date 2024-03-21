@@ -1,4 +1,7 @@
+using LessonTime.Shared.Services;
 using LessonTime.WEB.Models;
+using LessonTime.WEB.Services.Interfaces;
+using LessonTime.WEB.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,9 +26,17 @@ namespace LessonTime.WEB
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
+
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
+            services.AddScoped<IIdentityService, IdentityService>();
+            services.AddHttpClient<IdentityService>();
+
+
             services.AddControllersWithViews();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
