@@ -40,9 +40,10 @@ namespace LessonTime.WEB
             services.AddHttpClient<ICatalogService, CatalogService>(opt =>
             {
                 opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Catalog.Path}");
-            });
+            }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
             services.AddScoped<ResourceOwnerPasswordTokenHandler>();
+            services.AddScoped<ClientCredentialTokenHandler>();
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddHttpClient<IdentityService>();
             services.AddHttpClient<CatalogService>();
