@@ -29,24 +29,26 @@ namespace LessonTime.WEB
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
             services.AddHttpContextAccessor();
+            services.AddAccessTokenManagement();
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
             var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
+            services.AddScoped<ResourceOwnerPasswordTokenHandler>();
+            services.AddScoped<ClientCredentialTokenHandler>();
 
             services.AddHttpClient<IClientCredentialTokenService,ClientCredentialTokenService>();
+            services.AddScoped<IIdentityService, IdentityService>();
 
 
-            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
             services.AddHttpClient<ICatalogService, CatalogService>(opt =>
             {
                 opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Catalog.Path}");
             }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
-            services.AddScoped<ResourceOwnerPasswordTokenHandler>();
-            services.AddScoped<ClientCredentialTokenHandler>();
-            services.AddScoped<IIdentityService, IdentityService>();
-            services.AddHttpClient<IdentityService>();
-            services.AddHttpClient<CatalogService>();
+           
+            //services.AddHttpClient<IdentityService>();
+            //services.AddHttpClient<CatalogService>();
 
 
 

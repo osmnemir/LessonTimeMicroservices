@@ -27,7 +27,7 @@ namespace LessonTime.WEB.Handler
                 throw new UnAuthorizeException();
             }
 
-            return response; 
+            return response;
         }
     }
 }

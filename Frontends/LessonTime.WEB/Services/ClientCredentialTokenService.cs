@@ -2,6 +2,7 @@
 using IdentityModel.Client;
 using LessonTime.WEB.Models;
 using LessonTime.WEB.Services.Interfaces;
+using Microsoft.Extensions.Options;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -14,10 +15,10 @@ namespace LessonTime.WEB.Services
         private readonly IClientAccessTokenCache _clientAccessTokenCache;
         private readonly HttpClient _httpClient;
 
-        public ClientCredentialTokenService(ServiceApiSettings serviceApiSettings, ClientSettings clientSettings, IClientAccessTokenCache clientAccessTokenCache, HttpClient httpClient)
+        public ClientCredentialTokenService(IOptions<ServiceApiSettings> serviceApiSettings, IOptions<ClientSettings> clientSettings, IClientAccessTokenCache clientAccessTokenCache, HttpClient httpClient)
         {
-            _serviceApiSettings = serviceApiSettings;
-            _clientSettings = clientSettings;
+            _serviceApiSettings = serviceApiSettings.Value;
+            _clientSettings = clientSettings.Value;
             _clientAccessTokenCache = clientAccessTokenCache;
             _httpClient = httpClient;
         }
