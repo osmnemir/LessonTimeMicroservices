@@ -28,9 +28,13 @@ namespace LessonTime.WEB
 
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
+            services.AddHttpContextAccessor();
+
             var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
 
-            services.AddHttpContextAccessor();
+            services.AddHttpClient<IClientCredentialTokenService,ClientCredentialTokenService>();
+
+
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
             services.AddHttpClient<ICatalogService, CatalogService>(opt =>
