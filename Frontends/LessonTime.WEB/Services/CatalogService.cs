@@ -72,8 +72,10 @@ namespace LessonTime.WEB.Services
             }
 
             var responseSuccess = await response.Content.ReadFromJsonAsync<Response<List<CourseViewModel>>>();
-            return responseSuccess.Data;
 
+           
+
+            return responseSuccess.Data;
 
         }
 

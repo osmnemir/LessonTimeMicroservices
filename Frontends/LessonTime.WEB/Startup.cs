@@ -46,9 +46,9 @@ namespace LessonTime.WEB
                 opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Catalog.Path}");
             }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
-           
-            //services.AddHttpClient<IdentityService>();
-            //services.AddHttpClient<CatalogService>();
+
+            services.AddHttpClient<IdentityService>();
+            services.AddHttpClient<CatalogService>();
 
 
 
