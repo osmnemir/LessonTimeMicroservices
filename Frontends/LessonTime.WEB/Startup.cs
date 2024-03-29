@@ -10,6 +10,7 @@ using System;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using LessonTime.WEB.Handler;
 using LessonTime.Shared.Services;
+using LessonTime.WEB.Helpers;
 
 namespace LessonTime.WEB
 {
@@ -29,6 +30,7 @@ namespace LessonTime.WEB
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.AddHttpContextAccessor();
             services.AddAccessTokenManagement();
+            services.AddSingleton<PhotoHelper>();
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
             var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();

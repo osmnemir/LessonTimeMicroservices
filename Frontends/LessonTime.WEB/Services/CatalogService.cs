@@ -1,6 +1,8 @@
 ﻿using LessonTime.Shared.Dtos;
+using LessonTime.WEB.Helpers;
 using LessonTime.WEB.Models.Catalogs;
 using LessonTime.WEB.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -12,11 +14,13 @@ namespace LessonTime.WEB.Services
     {
         private readonly HttpClient _client;
         private readonly IPhotoStockService _photoStockService;
+        private readonly PhotoHelper _photoHelper;
 
-        public CatalogService(HttpClient client, IPhotoStockService photoStockService)
+        public CatalogService(HttpClient client, IPhotoStockService photoStockService, PhotoHelper photoHelper)
         {
             _client = client;
             _photoStockService = photoStockService;
+            _photoHelper = photoHelper;
         }
 
         public async Task<bool> CreateCourseAsync(CourseCreateInput courseCreateInput)
@@ -66,7 +70,12 @@ namespace LessonTime.WEB.Services
             }
 
             var responseSuccess = await response.Content.ReadFromJsonAsync<Response<List<CourseViewModel>>>();
-            
+            responseSuccess.Data.ForEach(x =>
+            {
+                x.Picture = _photoHelper.GetPhotoStockUrl(x.Picture);
+            });
+
+
             return responseSuccess.Data;
         }
 
@@ -81,7 +90,10 @@ namespace LessonTime.WEB.Services
 
             var responseSuccess = await response.Content.ReadFromJsonAsync<Response<List<CourseViewModel>>>();
 
-           
+            responseSuccess.Data.ForEach(x =>
+            {
+                x.Picture=_photoHelper.GetPhotoStockUrl(x.Picture);
+            });
 
             return responseSuccess.Data;
 
