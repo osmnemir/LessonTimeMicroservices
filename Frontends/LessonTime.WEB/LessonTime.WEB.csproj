@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Services\Discount\LessonTime.Services.Discount\LessonTime.Services.Discount.csproj" />
     <ProjectReference Include="..\..\Shared\LessonTime.Shared\LessonTime.Shared.csproj" />
   </ItemGroup>
 
