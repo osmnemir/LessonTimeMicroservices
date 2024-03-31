@@ -40,7 +40,7 @@ namespace LessonTime.WEB.Extensions
 
             //services.AddHttpClient<IDiscountService, DiscountService>(opt =>
             //{
-            //    opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Discount.Path}");
+            //    //opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Discount.Path}");
             //}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
             //services.AddHttpClient<IPaymentService, PaymentService>(opt =>

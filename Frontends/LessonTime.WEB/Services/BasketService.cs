@@ -1,5 +1,4 @@
-﻿using LessonTime.Services.Discount.Services;
-using LessonTime.Shared.Dtos;
+﻿using LessonTime.Shared.Dtos;
 using LessonTime.WEB.Models.Baskets;
 using LessonTime.WEB.Services.Interfaces;
 using System;
@@ -14,12 +13,11 @@ namespace LessonTime.WEB.Services
 
     {
         private readonly HttpClient _httpClient;
-        private readonly IDiscountService _discountService;
 
-        public BasketService(HttpClient httpClient, IDiscountService discountService)
+        public BasketService(HttpClient httpClient  )
         {
             _httpClient = httpClient;
-            _discountService = discountService;
+             
         }
 
         public async Task AddBasketItem(BasketItemViewModel basketItemViewModel)

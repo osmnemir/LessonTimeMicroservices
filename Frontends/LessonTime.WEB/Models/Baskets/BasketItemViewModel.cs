@@ -8,7 +8,7 @@
 
         public decimal Price { get; set; }
 
-        private decimal? DiscountAppliedPrice;
+        private decimal? DiscountAppliedPrice { get; set; }
 
         public decimal GetCurrentPrice
         {

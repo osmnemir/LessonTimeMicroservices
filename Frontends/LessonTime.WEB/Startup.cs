@@ -37,7 +37,9 @@ namespace LessonTime.WEB
             services.AddScoped<ResourceOwnerPasswordTokenHandler>();
             services.AddScoped<ClientCredentialTokenHandler>();
 
+
             services.AddHttpClientServices(Configuration);
+
 
 
             //services.AddScoped<IIdentityService, IdentityService>();      
@@ -45,7 +47,6 @@ namespace LessonTime.WEB
             //services.AddHttpClient<CatalogService>();
 
 
-            services.AddControllersWithViews();
 
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opts =>
@@ -55,6 +56,8 @@ namespace LessonTime.WEB
                 opts.SlidingExpiration = true;
                 opts.Cookie.Name = "lessontimecookie";
             });
+
+            services.AddControllersWithViews();
 
         }
 
