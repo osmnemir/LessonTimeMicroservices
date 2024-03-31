@@ -12,6 +12,8 @@ using LessonTime.WEB.Handler;
 using LessonTime.Shared.Services;
 using LessonTime.WEB.Helpers;
 using LessonTime.WEB.Extensions;
+using FluentValidation.AspNetCore;
+using LessonTime.WEB.Validators;
 
 namespace LessonTime.WEB
 {
@@ -57,7 +59,7 @@ namespace LessonTime.WEB
                 opts.Cookie.Name = "lessontimecookie";
             });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddFluentValidation(fv=>fv.RegisterValidatorsFromAssemblyContaining<CourseCreateInputValidator>());
 
         }
 
