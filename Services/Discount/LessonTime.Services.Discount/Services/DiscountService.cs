@@ -20,6 +20,7 @@ namespace LessonTime.Services.Discount.Services
 
             _dbConnection = new NpgsqlConnection(_configuration.GetConnectionString("PostgreSql"));
         }
+
         public async Task<Response<NoContent>> Delete(int id)
         {
             var status = await _dbConnection.ExecuteAsync("delete from discount where id=@Id", new { Id = id });
