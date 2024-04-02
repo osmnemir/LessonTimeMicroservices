@@ -1,4 +1,5 @@
 ﻿using LessonTime.WEB.Models.Baskets;
+using LessonTime.WEB.Models.Discount;
 using LessonTime.WEB.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -40,5 +41,23 @@ namespace LessonTime.WEB.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> ApplyDiscount(DiscountApplyInput discountApplyInput)
+        {
+            var discountStatus = await _basketService.ApplyDiscount(discountApplyInput.Code);
+
+            TempData["discountStatus"] = discountStatus;
+            return RedirectToAction(nameof(Index));
+
+        }
+
+        public async Task<IActionResult> CancelApplyDiscount( )
+        {
+            await _basketService.CancelApplyDiscount();
+            return RedirectToAction(nameof(Index));
+
+        }
+
+
     }
 }
