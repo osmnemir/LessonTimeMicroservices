@@ -13,11 +13,12 @@ namespace LessonTime.WEB.Services
 
     {
         private readonly HttpClient _httpClient;
+        private readonly IDiscountService _discountService;
 
-        public BasketService(HttpClient httpClient  )
+        public BasketService(HttpClient httpClient, IDiscountService discountService)
         {
             _httpClient = httpClient;
-             
+            _discountService = discountService;
         }
 
         public async Task AddBasketItem(BasketItemViewModel basketItemViewModel)
@@ -43,13 +44,34 @@ namespace LessonTime.WEB.Services
 
         public async Task<bool> ApplyDiscount(string discountCode)
         {
-            throw new NotImplementedException();
-
+            await CancelApplyDiscount();
+            var basket = await Get();
+            if (basket != null|| basket.DiscountCode==null)
+            {
+                return false;
+            }
+            var hasDiscount=await _discountService.GetDiscount(discountCode);
+            if (hasDiscount == null)
+            {
+                return false;
+            }
+            basket.DiscountRate=hasDiscount.Rate;
+            basket.DiscountCode = hasDiscount.Code;
+            await SaveOrUpdate(basket);
+            return true;
         }
 
         public async Task<bool> CancelApplyDiscount()
         {
-            throw new NotImplementedException();
+            var basket= await Get();
+            if (basket == null || basket.DiscountCode==null)
+            {
+                return false;
+            }
+            basket.DiscountCode = null;
+            await SaveOrUpdate(basket);
+            return true;
+
         }
 
         public async Task<bool> Delete()
