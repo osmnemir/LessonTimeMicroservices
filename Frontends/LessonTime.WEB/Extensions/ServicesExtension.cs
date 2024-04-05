@@ -16,9 +16,6 @@ namespace LessonTime.WEB.Extensions
             services.AddHttpClient<IClientCredentialTokenService, ClientCredentialTokenService>();
             services.AddHttpClient<IIdentityService, IdentityService>();
 
-
-
-            //ServiceApiSettingse ve appsettingse ekle
             services.AddHttpClient<ICatalogService, CatalogService>(opt =>
 
             {
@@ -55,9 +52,6 @@ namespace LessonTime.WEB.Extensions
             {
                 opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Order.Path}");
             }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
-
-
-
         }
     }
 }
